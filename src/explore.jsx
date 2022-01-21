@@ -67,12 +67,12 @@ const Explore = () => {
             <div className=' py-10  mb-12 w-full   bg-blue-600 '>
                 <div className='flex-grow flex justify-end mr-12 mb-12'>
                     {accountData ?
-                        <div>
-                            <p className='text-white'>{`${[...accountData.address].splice(0, 6).join("")}...${[...accountData.address].splice(37).join("")}`}</p>
+                        <div className='flex items-center'>
+                            <p className='text-white mr-4'>{`${[...accountData.address].splice(0, 6).join("")}...${[...accountData.address].splice(37).join("")}`}</p>
                             <button className=" py-2 px-4 rounded-lg bg-white" onClick={() => disconnect()}>Disconnect</button>
                         </div>
                         
-                        : <button className=" py-2 px-4 bg-white" onClick={() => navigate("/")}>Connect</button>} 
+                        : <button className=" py-2 px-4 rounded-lg bg-white" onClick={() => navigate("/")}>Connect</button>} 
                 </div>
                 <div className='flex flex-col items-center mb-12'>
                     <div className='mb-16 text-white text-center'>
