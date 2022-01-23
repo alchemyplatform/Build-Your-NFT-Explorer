@@ -3,7 +3,7 @@ import { useState } from 'react';
 import NftCard from './components/nftcard';
 import { useAccount } from 'wagmi';
 import { useNavigate } from 'react-router-dom';
-
+import {ClipboardIcon} from "@heroicons/react/outline"
 
 
 // compiler: "FrankenPunks Generator"
@@ -24,7 +24,6 @@ const Explore = () => {
     const navigate = useNavigate()
 
     const fetchNFTS = async () => {
-        console.log("fetching nfts")
         if (owner) {
             let data;
             if (contractAddress) {
@@ -54,32 +53,29 @@ const Explore = () => {
         }
     }
 
-
-
-    if (accountData && !owner) {
-        console.log(accountData.address)
-        setOwner(accountData.address)
-        fetchNFTS()
-    }
-
     return (
         <div>
-            <div className=' py-10  mb-12 w-full   bg-blue-600 '>
+            <header className=' py-10  mb-12 w-full   bg-blue-600 '>
                 <div className='flex-grow flex justify-end mr-12 mb-12'>
-                    {accountData ?
-                        <div className='flex items-center'>
-                            <p className='text-white mr-4'>{`${[...accountData.address].splice(0, 6).join("")}...${[...accountData.address].splice(37).join("")}`}</p>
-                            <button className=" py-2 px-4 rounded-lg bg-white" onClick={() => disconnect()}>Disconnect</button>
-                        </div>
-                        
-                        : <button className=" py-2 px-4 rounded-lg bg-white" onClick={() => navigate("/")}>Connect</button>} 
+                    {
+                        accountData ?
+                            <div className='flex items-center'>
+                                <div className='flex mr-4'>
+                                    <p className='text-white'>{`${[...accountData.address].splice(0, 6).join("")}...${[...accountData.address].splice(37).join("")}`}</p>
+                                <ClipboardIcon onClick={() => navigator.clipboard.writeText(accountData.address)} className="h-5 w-5 -mt-2 text-slate-200 cursor-pointer"></ClipboardIcon>
+                                </div>
+
+
+                                <button className=" py-2 px-4 rounded-lg bg-white" onClick={() => disconnect()}>Disconnect</button>
+                            </div>
+                            : <button className=" py-2 px-4 rounded-lg bg-white" onClick={() => navigate("/")}>Connect</button>
+                    }
                 </div>
                 <div className='flex flex-col items-center mb-12'>
                     <div className='mb-16 text-white text-center'>
                         <h1 className='text-5xl  font-bold mb-2'>
                             Alchemy NFT Explorer
                         </h1>
-
                         <p>Lorem ipsum dolor sit amet your wallet address</p>
                     </div>
                     <div className='flex justify-center mb-4 w-3/5 '>
@@ -91,13 +87,11 @@ const Explore = () => {
                         <button className='py-3 bg-white rounded-sm w-4/6 hover:bg-slate-100' onClick={fetchNFTS}>Search</button>
                     </div>
                 </div>
+            </header>
 
-                
-
-            </div>
-
-            <div className='flex flex-wrap justify-center'>
-                    {NFTs ? NFTs.map(NFT => {
+            <section className='flex flex-wrap justify-center'>
+                {
+                    NFTs ? NFTs.map(NFT => {
                         return (
                             <>
                                 {
@@ -106,8 +100,9 @@ const Explore = () => {
                                 }
                             </>
                         )
-                    }) : <div>No NFTs found</div>}
-                </div>
+                    }) : <div>No NFTs found</div>
+                }
+            </section>
         </div>
     )
 }

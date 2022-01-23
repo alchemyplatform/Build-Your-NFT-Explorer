@@ -15,33 +15,22 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
                     <div className="flex-grow">
                         <h3 className="text-xl">{title}</h3>
                         <p>{`${id.slice(0, 4)}...${id.slice(id.length - 4)}`}</p>
-
                     </div>
                     <div className="flex flex-col mr-3">
                         <a className="text-blue-700" href={`https://etherscan.io/token/${address}`}>{`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}</a>
-
                     </div>
-
-
                 </div>
-
-
                 <p>{description.slice(0, 200)}</p>
             </div>
             <div className="flex flex-wrap justify-center items-center p-3 ">
                 {attributes && attributes.map(attribute => {
-
                     return (
                         <div className="w-1/2 mb-2 flex justify-start flex-col">
                             <p className="mr-2 font-bold">{attribute.trait_type}:</p>
                             <p className="text-sm">{attribute.value}</p>
-                            
                         </div>
                     )
                 })}
-
-        
-
             </div>
         </div>
     )

@@ -1,14 +1,12 @@
-import './App.css';
 import { Provider, chain, defaultChains } from "wagmi"
 import { InjectedConnector } from "wagmi/connectors/injected"
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect"
 import Nav from './components/nav';
 
 function App() {
-  
+  const alchemyId = "YOUR_ALCHEMY_API_KEY"
 
-  const alchemyId = "https://eth-mainnet.alchemyapi.io/v2/L9_nj7QcxFpgM9N-6EGfuUowlpWmA9py"
-
+  // initialize wagmi library connectors for Metamask and Walletconnect
   const connectors = ({ chainId }) => {
     const rpcUrl =defaultChains.find((x) => x.id === chainId)?.rpcUrls?.[0] ?? chain.mainnet.rpcUrls[0]
     return [
@@ -22,18 +20,13 @@ function App() {
     ]
   }
 
-
   return (
     <Provider autoConnect connectors={connectors}>
       <Nav>
-        
+
       </Nav>
     </Provider>
-  
   );
 }
-
-
-
 
 export default App;
