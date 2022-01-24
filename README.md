@@ -56,8 +56,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Jan-21-2022 19-33-50-min](https://user-images.githubusercontent.com/72762629/150807611-5bf5ab02-e9a9-4cfb-95c2-61f2bf0f0e2f.gif)
 
 This Demo, built on top of ReactJs, showcase the functionalities of the Alchemy NFT API, allowing you to fetch NFTs by:
 - Wallet Address
