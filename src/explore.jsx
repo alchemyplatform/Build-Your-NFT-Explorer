@@ -22,19 +22,21 @@ const Explore = () => {
     const [NFTs, setNFTs] = useState()
     const [{ data: accountData }, disconnect] = useAccount()
     const navigate = useNavigate()
+    require('dotenv').config()
+    
 
     const fetchNFTS = async () => {
         if (owner) {
             let data;
             if (contractAddress) {
-                data = await fetch(`https://eth-mainnet.alchemyapi.io/L9_nj7QcxFpgM9N-6EGfuUowlpWmA9py/v1/getNFTs?owner=${owner}&contractAddresses%5B%5D=${contractAddress}`).then(data => data.json())
+                data = await fetch(`${process.env.ALCHEMY_ETHEREUM_ENDPOINT}/v1/getNFTs?owner=${owner}&contractAddresses%5B%5D=${contractAddress}`).then(data => data.json())
 
             } else {
-                data = await fetch(`https://eth-mainnet.alchemyapi.io/L9_nj7QcxFpgM9N-6EGfuUowlpWmA9py/v1/getNFTs?owner=${owner}`).then(data => data.json())
+                data = await fetch(`${process.env.ALCHEMY_ETHEREUM_ENDPOINT}/v1/getNFTs?owner=${owner}`).then(data => data.json())
             }
             if (data.ownedNfts.length) {
                 const NFTs = await Promise.all(data.ownedNfts.map(async (NFT) => {
-                    const metadata = await fetch(`https://eth-mainnet.alchemyapi.io/L9_nj7QcxFpgM9N-6EGfuUowlpWmA9py/v1/getNFTMetadata?contractAddress=${NFT.contract.address}&tokenId=${NFT.id.tokenId}&tokenType=erc721`).then(data => data.json())
+                    const metadata = await fetch(`${process.env.ALCHEMY_ETHEREUM_ENDPOINT}/v1/getNFTMetadata?contractAddress=${NFT.contract.address}&tokenId=${NFT.id.tokenId}&tokenType=erc721`).then(data => data.json())
                     console.log(metadata)
                     return {
                         id: NFT.id.tokenId,
