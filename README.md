@@ -125,9 +125,10 @@ Getting started is super simple! Follow the following steps and start fetching N
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1. Insert a wallet address in the input field to retrieve all Ethereum NFTs associated with that address
+2. Insert the Smart contract address to retrieve owned NFTs by contract address
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -136,15 +137,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
+- [x] Implement Ethereum support
+- [x] Implement Fetch by Owner
+- [x] Implement Fetch by Smart Contract address
 - [ ] Add Multichain support 
-- [ ] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [ ] UI/UX Update
+- [ ] Implementing Fetch by collection 
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+See the [open issues](https://github.com/alchemyplatform/NFT-API-demo/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -180,9 +181,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+ - [@AlchemyPlatform](https://twitter.com/AlchemyPlatform)
+ - [Discord]()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
