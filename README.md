@@ -55,7 +55,7 @@
 ## About The Project
 ![Jan-21-2022 19-33-50-min](https://user-images.githubusercontent.com/72762629/150807611-5bf5ab02-e9a9-4cfb-95c2-61f2bf0f0e2f.gif)
 
-This Demo, built on top of ReactJs, showcase the functionalities of the Alchemy NFT API, allowing you to fetch NFTs by:
+This Demo, built on top of ReactJs, showcase the functionalities of the [Alchemy NFT API](https://www.alchemy.com/nft-api), allowing you to fetch NFTs by:
 - Wallet Address
 - Smart contract address
 
@@ -66,6 +66,7 @@ and display the images, attributes, collection name, and creator of your favouri
 
 ### Built With
 
+* [Alchemy](https://www.alchemy.com)
 * [Next.js](https://www.alchemy.com/)
 * [React.js](https://reactjs.org/)
 * [TailwindCSS](https://getbootstrap.com)
@@ -98,7 +99,7 @@ Getting started is super simple! Follow the following steps and start fetching N
    
 3. Create a .env file in the root folder
 4. Create un account on [Alchemy.com](https://www.alchemy.com/)
-5. Grab your Alchemy Endpoint key following [This guide]()
+5. Grab your Alchemy Endpoint key following [This guide](https://docs.alchemy.com/alchemy/introduction/getting-started)
 6. Enter your Alchemy Endpoint to your .env file
    ```js
    ALCHEMY_ETHEREUM_ENDPOINT=YOU_API_KEY
@@ -162,7 +163,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
