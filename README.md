@@ -102,7 +102,7 @@ Getting started is super simple! Follow the following steps and start fetching N
 5. Grab your Alchemy Endpoint key following [This guide](https://docs.alchemy.com/alchemy/introduction/getting-started)
 6. Enter your Alchemy Endpoint to your .env file
    ```js
-   ALCHEMY_ETHEREUM_ENDPOINT=YOU_API_KEY
+   ALCHEMY_ETHEREUM_ENDPOINT=YOUR_API_KEY
    ```
 7. Run the application
   ```sh
