@@ -1,33 +1,25 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/alchemyplatform/NFT-API-demo/">
+          <img src="https://user-images.githubusercontent.com/72762629/150806073-d44e9c0e-0807-4e1d-bd49-35c67fe39a49.png" alt="Logo" height="80" >
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Alchemy NFT API Demo</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Find, verify, and display any NFT,  across all major blockchains, with ease.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.alchemy.com/alchemy/enhanced-apis/nft-api"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="#">View Demo (Coming soon)</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/alchemyplatform/NFT-API-demo/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/alchemyplatform/NFT-API-demo/issues">Request Feature</a>
   </p>
+
 </div>
 
 
@@ -54,7 +46,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -62,36 +53,23 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+![Jan-21-2022 19-33-50-min](https://user-images.githubusercontent.com/72762629/150807611-5bf5ab02-e9a9-4cfb-95c2-61f2bf0f0e2f.gif)
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+This Demo, built on top of ReactJs, showcase the functionalities of the [Alchemy NFT API](https://www.alchemy.com/nft-api), allowing you to fetch NFTs by:
+- Wallet Address
+- Smart contract address
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+and display the images, attributes, collection name, and creator of your favourite NFTs
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [Next.js](https://nextjs.org/)
+* [Alchemy](https://www.alchemy.com)
+* [Next.js](https://www.alchemy.com/)
 * [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [TailwindCSS](https://getbootstrap.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -100,35 +78,37 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Getting started is super simple! Follow the following steps and start fetching NFTs on Ethereum, Polygon, and Flow!
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- Node >= 16.13.x
+
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/alchemyplatform/NFT-API-demo.git
    ```
-3. Install NPM packages
+2. Install the dependencies using npm or yarn
    ```sh
-   npm install
+   npm install || yarn install
    ```
-4. Enter your API in `config.js`
+   
+3. Create a .env file in the root folder
+4. Create un account on [Alchemy.com](https://www.alchemy.com/)
+5. Grab your Alchemy Endpoint key following [This guide](https://docs.alchemy.com/alchemy/introduction/getting-started)
+6. Enter your Alchemy Endpoint to your .env file
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   ALCHEMY_ETHEREUM_ENDPOINT=YOUR_API_KEY
    ```
-
+7. Run the application
+  ```sh
+  npm run start
+  ```
+  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -136,9 +116,10 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1. Insert a wallet address in the input field to retrieve all Ethereum NFTs associated with that address
+2. Insert the Smart contract address to retrieve owned NFTs by contract address
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -147,15 +128,15 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Implement Ethereum support
+- [x] Implement Fetch by Owner
+- [x] Implement Fetch by Smart Contract address
+- [ ] Add Multichain support 
+- [ ] UI/UX Update
+- [ ] Implementing Fetch by collection 
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+See the [open issues](https://github.com/alchemyplatform/NFT-API-demo/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -182,7 +163,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -191,44 +172,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+ - [@AlchemyPlatform](https://twitter.com/AlchemyPlatform)
+ - [Discord]()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/alchemyplatform/NFT-API-demo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
