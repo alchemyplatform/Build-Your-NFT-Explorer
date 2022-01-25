@@ -22,8 +22,6 @@ const Explore = () => {
     const [NFTs, setNFTs] = useState()
     const [{ data: accountData }, disconnect] = useAccount()
     const navigate = useNavigate()
-    require('dotenv').config()
-    
 
     const fetchNFTS = async () => {
         if (owner) {
