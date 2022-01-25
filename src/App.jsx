@@ -23,7 +23,6 @@ function App() {
   return (
     <Provider autoConnect connectors={connectors}>
       <Nav>
-
       </Nav>
     </Provider>
   );
