@@ -29,7 +29,7 @@ const MyProfile = () => {
                 loading ?
                     <div><h1>Loading...</h1></div> :
                     accountData ?
-                        <header className=' py-14  mb-12 w-full flex flex-col items-center justify-center bg-blue-600 text-white '>
+                        <header className=' py-40  mb-12 w-full flex flex-col items-center justify-center bg-blue-600 text-white '>
                             <img src='https://via.placeholder.com/200'></img>
                             <div><h3 className='mt-4 text-xl'>{accountData.address}</h3>
                                 <div className='mt-4'>

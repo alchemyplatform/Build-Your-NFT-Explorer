@@ -4,9 +4,10 @@
 // edition: 3406
 // image: "ipfs://QmQYa6JwYnecVr1JZ3EMug5hrgcoegSAZaBR2pvc8P9ZUi/3406.png"
 // name: "#3406"
+import { ClipboardIcon } from "@heroicons/react/outline"
+
 
 const NftCard = ({ image, id, title, address, description, attributes }) => {
-
     return (
         <div className="w-1/4 mr-3 mb-4 bg-slate-100 rounded-md" >
             <img className='w-full rounded-t-md' key={id} src={image}></img>
@@ -16,14 +17,15 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
                         <h3 className="text-xl">{title}</h3>
                         <p>{`${id.slice(0, 4)}...${id.slice(id.length - 4)}`}</p>
                     </div>
-                    <div className="flex flex-col mr-3">
+                    <div className="flex mr-3">
                         <a className="text-blue-700" href={`https://etherscan.io/token/${address}`}>{`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}</a>
+                        <ClipboardIcon onClick={() => navigator.clipboard.writeText(address)} className="h-4 w-4 -mt-1 text-black cursor-pointer"></ClipboardIcon>
                     </div>
                 </div>
-                <p>{description.slice(0, 200)}</p>
+                <p>{description? description.slice(0, 200) : ""}</p>
             </div>
             <div className="flex flex-wrap justify-center items-center p-3 ">
-                {attributes && attributes.map(attribute => {
+                {attributes?.length && attributes.map(attribute => {
                     return (
                         <div className="w-1/2 mb-2 flex justify-start flex-col">
                             <p className="mr-2 font-bold">{attribute.trait_type}:</p>

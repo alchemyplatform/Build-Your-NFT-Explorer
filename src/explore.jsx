@@ -13,9 +13,10 @@ import {fetchNFTs} from './utils/fetchNFTs';
 const Explore = () => {
 
     // const [blockchain, setBlockchain] = useState() NOT IMPLEMENTED
-    const [owner, setOwner] = useState()
-    const [contractAddress, setContractAddress] = useState()
-    const [NFTs, setNFTs] = useState()
+    const [owner, setOwner] = useState("")
+    const [contractAddress, setContractAddress] = useState("")
+    const [NFTs, setNFTs] = useState("")
+    const [chain, setBlockchain] = useState("Ethereum")
   
 
     
@@ -35,29 +36,29 @@ const Explore = () => {
                     </div>
                     <div className='flex flex-col items-center justify-center mb-4 w-2/6 gap-y-2 '>
                         <input className="border rounded-sm focus:outline-none py-2 px-3 w-full" value={owner} onChange={(e) => setOwner(e.target.value)} placeholder='Insert your wallet address'></input>
-                        <input className="focus:outline-none rounded-sm py-2 px-3 w-full" onChange={(e) => setContractAddress(e.target.value)} placeholder='Insert NFT address (optional)'></input>
+                        <input className="focus:outline-none rounded-sm py-2 px-3 w-full" value={contractAddress} onChange={(e) => setContractAddress(e.target.value)} placeholder='Insert NFT address (optional)'></input>
                         <div className='flex gap-12 items-center text-white my-4'>
                             <div>
-                                <input className='mr-1' type="radio" name='blockchain' value="Eth" checked />
-                                <label for="Eth">Ethereum</label>
+                                <input onChange={(e) => setBlockchain(e.target.value)} className='mr-1' type="radio" name='blockchain' value="Ethereum" checked={chain == "Ethereum"} />
+                                <label htmlFor="Eth">Ethereum</label>
                             </div>
                             <div>
-                                <input  className='mr-1' type="radio" name='blockchain' value="Rinkeby" />
-                                <label for="Rinkeby">Rinkeby</label>
+                                <input onChange={(e) => setBlockchain(e.target.value)} className='mr-1' type="radio" name='blockchain' value="Rinkeby" checked={chain == "Rinkeby"} disabled/>
+                                <label htmlFor="Rinkeby">Rinkeby</label>
                             </div>
 
                             <div>
-                                <input  className='mr-1' type="radio" name='blockchain' value="Polygon" />
-                                <label for="Polygon">Polygon</label>
+                                <input onChange={(e) => setBlockchain(e.target.value)}  className='mr-1' type="radio" name='blockchain' value="Polygon" checked={chain == "Polygon"}/>
+                                <label htmlFor="Polygon">Polygon</label>
                             </div>
                             <div>
-                                <input  className='mr-1' type="radio" name='blockchain' value="Rinkeby" />
-                                <label for="Mumbai">Mumbai</label>
+                                <input onChange={(e) => setBlockchain(e.target.value)} className='mr-1' type="radio" name='blockchain' value="Mumbai" checked={chain == "Mumbai"} disabled/>
+                                <label htmlFor="Mumbai">Mumbai</label>
                             </div>
                         </div>
                     </div>
                     <div className='w-2/6 flex justify-center'>
-                        <button className='py-3 bg-white rounded-sm w-full hover:bg-slate-100' onClick={() => {fetchNFTs(owner, setNFTs, contractAddress)}}>Search</button>
+                        <button className='py-3 bg-white rounded-sm w-full hover:bg-slate-100' onClick={() => {fetchNFTs(owner, setNFTs, chain, contractAddress)}}>Search</button>
                     </div>
                 </div>
             </header>
@@ -65,13 +66,9 @@ const Explore = () => {
             <section className='flex flex-wrap justify-center'>
                 {
                     NFTs ? NFTs.map(NFT => {
+                        
                         return (
-                            <>
-                                {
-                                    NFT.image && <NftCard image={NFT.image} id={NFT.id} title={NFT.title} description={NFT.description} address={NFT.contractAddress} attributes={NFT.attributes}></NftCard>
-
-                                }
-                            </>
+                           NFT?.image && <NftCard  image={NFT.image} id={NFT.id} title={NFT.title} description={NFT.description} address={NFT.contractAddress} attributes={NFT.attributes}></NftCard>
                         )
                     }) : <div>No NFTs found</div>
                 }

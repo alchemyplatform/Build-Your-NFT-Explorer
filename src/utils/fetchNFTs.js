@@ -1,42 +1,75 @@
 
-const getAddressNFTs = async (owner, contractAddress) => {
-    console.log("contract address", contractAddress)
+const getAddressNFTs = async (endpoint, owner, contractAddress) => {
     if (owner) {
         let data;
-        if (contractAddress) {
-            data = await fetch(`${process.env.REACT_APP_ALCHEMY_ETHEREUM_ENDPOINT}/v1/getNFTs?owner=${owner}&contractAddresses%5B%5D=${contractAddress}`).then(data => data.json())
-
-        } else {
-            data = await fetch(`${process.env.REACT_APP_ALCHEMY_ETHEREUM_ENDPOINT}/v1/getNFTs?owner=${owner}`).then(data => data.json())
+        try {
+            if (contractAddress) {
+                data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}&contractAddresses%5B%5D=${contractAddress}`).then(data => data.json())
+    
+            } else {
+                // data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}`).then(data => data.json())
+                data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}`).then(data => data.json())
+                
+            }
+            console.log(data)
+        } catch (e) {
+            getAddressNFTs(endpoint, owner, contractAddress)
         }
-        console.log("data", data)
+        
         return data
     }
 }
 
-const fetchNFTs = async (owner, setNFTs, contractAddress) => {
-    const data = await getAddressNFTs(owner, contractAddress)
-        
-        if (data.ownedNfts.length) {
-            const NFTs = await Promise.all(data.ownedNfts.map(async (NFT) => {
-                const metadata = await fetch(`${process.env.REACT_APP_ALCHEMY_ETHEREUM_ENDPOINT}/v1/getNFTMetadata?contractAddress=${NFT.contract.address}&tokenId=${NFT.id.tokenId}&tokenType=erc721`).then(data => data.json())
-                console.log(metadata)
+const getEndpoint = (chain) => {
+    switch (chain) {
+        case "Ethereum":
+            return process.env.REACT_APP_ALCHEMY_ETHEREUM_ENDPOINT
+            break;
+        case "Polygon":
+            return process.env.REACT_APP_ALCHEMY_POLYGON_ENDPOINT
+            break;
+        case "Mumbai":
+            return process.env.REACT_APP_ALCHEMY_MUMBAI_ENDPOINT
+            break;
+        case "Rinkeby":
+            return process.env.REACT_APP_ALCHEMY_RINKEBY_ENDPOINT
+            break;
+    }
+}
+
+const fetchNFTs = async (owner, setNFTs, chain, contractAddress) => {
+    let endpoint = getEndpoint(chain)
+    const data = await getAddressNFTs(endpoint, owner, contractAddress)
+    if (data.ownedNfts.length) {
+        const NFTs = await Promise.all(data.ownedNfts.map(async (NFT) => {
+            try {
+                const metadata = await fetch(`${endpoint}/v1/getNFTMetadata?contractAddress=${NFT.contract.address}&tokenId=${NFT.id.tokenId}&tokenType=erc721`,).then(data => data.json())
+                let image;
+
+                if (metadata.alternateMedia[0].uri.length) {
+                    image = metadata.alternateMedia[0].uri
+                } else {
+                    image = "https://via.placeholder.com/500"
+                }
+
                 return {
                     id: NFT.id.tokenId,
                     contractAddress: NFT.contract.address,
-                    image: metadata.metadata ? metadata.alternateMedia[0].uri : "https://via.placeholder.com/500",
+                    image,
                     title: metadata.metadata.name,
                     description: metadata.metadata.description,
                     attributes: metadata.metadata.attributes
                 }
-            }))
-            console.log("NFTS", NFTs)
-            setNFTs(NFTs)
-        } else {
-            setNFTs(null)
-        }
+            } catch (e) {
+            }
 
+        }))
+        setNFTs(NFTs)
+    } else {
+        setNFTs(null)
     }
 
+}
 
-export {fetchNFTs, getAddressNFTs}
+
+export { fetchNFTs, getAddressNFTs }
