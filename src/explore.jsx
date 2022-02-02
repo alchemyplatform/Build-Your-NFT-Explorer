@@ -68,7 +68,7 @@ const Explore = () => {
                     NFTs ? NFTs.map(NFT => {
                         
                         return (
-                           NFT?.image && <NftCard  image={NFT.image} id={NFT.id} title={NFT.title} description={NFT.description} address={NFT.contractAddress} attributes={NFT.attributes}></NftCard>
+                           <NftCard  image={NFT.image} id={NFT.id} title={NFT.title} description={NFT.description} address={NFT.contractAddress} attributes={NFT.attributes}></NftCard>
                         )
                     }) : <div>No NFTs found</div>
                 }

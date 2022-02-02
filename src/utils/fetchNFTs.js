@@ -1,3 +1,4 @@
+import NftCard from "../components/nftcard";
 
 const getAddressNFTs = async (endpoint, owner, contractAddress) => {
     if (owner) {
@@ -41,13 +42,12 @@ const fetchNFTs = async (owner, setNFTs, chain, contractAddress) => {
     let endpoint = getEndpoint(chain)
     const data = await getAddressNFTs(endpoint, owner, contractAddress)
     if (data.ownedNfts.length) {
-        const NFTs = await Promise.all(data.ownedNfts.map(async (NFT) => {
-            try {
+        const NFTs = await Promise.allSettled(data.ownedNfts.map(async (NFT) => {
                 const metadata = await fetch(`${endpoint}/v1/getNFTMetadata?contractAddress=${NFT.contract.address}&tokenId=${NFT.id.tokenId}&tokenType=erc721`,).then(data => data.json())
                 let image;
 
-                if (metadata.alternateMedia[0].uri.length) {
-                    image = metadata.alternateMedia[0].uri
+                if (metadata.media[0].uri.gateway.length) {
+                    image = metadata.media[0].uri.gateway
                 } else {
                     image = "https://via.placeholder.com/500"
                 }
@@ -60,11 +60,11 @@ const fetchNFTs = async (owner, setNFTs, chain, contractAddress) => {
                     description: metadata.metadata.description,
                     attributes: metadata.metadata.attributes
                 }
-            } catch (e) {
-            }
-
+            
         }))
-        setNFTs(NFTs)
+        let fullfilledNFTs = NFTs.filter(NFT => NFT.status == "fulfilled")
+        console.log(fullfilledNFTs)
+        setNFTs(fullfilledNFTs)
     } else {
         setNFTs(null)
     }
