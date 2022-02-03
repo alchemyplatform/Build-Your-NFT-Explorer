@@ -14,7 +14,7 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
             <div className="p-3">
                 <div className="flex mb-3">
                     <div className="flex-grow">
-                        <h3 className="text-xl">{title}</h3>
+                        <h3 className="text-xl">{title ? title : "No title"}</h3>
                         <p>{`${id.slice(0, 4)}...${id.slice(id.length - 4)}`}</p>
                     </div>
                     <div className="flex mr-3">
@@ -22,10 +22,10 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
                         <ClipboardIcon onClick={() => navigator.clipboard.writeText(address)} className="h-4 w-4 -mt-1 text-black cursor-pointer"></ClipboardIcon>
                     </div>
                 </div>
-                <p>{description? description.slice(0, 200) : ""}</p>
+                <p>{description? description.slice(0, 200) : "No Description"}</p>
             </div>
             <div className="flex flex-wrap justify-center items-center p-3 ">
-                {attributes?.length && attributes.map(attribute => {
+                {attributes?.length > 0 && attributes.map(attribute => {
                     return (
                         <div className="w-1/2 mb-2 flex justify-start flex-col">
                             <p className="mr-2 font-bold">{attribute.trait_type}:</p>

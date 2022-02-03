@@ -5,7 +5,7 @@ const Login = () => {
     const [{ data, error }, connect] = useConnect()
     const navigate = useNavigate()
     return (
-        <div className="bg-blue-600 h-screen flex flex-col items-center justify-center gap-2 ">
+        <div className="alchemy h-screen flex flex-col items-center justify-center gap-2 ">
             <h1 className="text-white text-3xl -mt-24 font-bold mb-12">
                 Login
             </h1>
