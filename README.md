@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/alchemyplatform/NFT-API-demo/">
-          <img src="https://user-images.githubusercontent.com/72762629/150806073-d44e9c0e-0807-4e1d-bd49-35c67fe39a49.png" alt="Logo" height="80" >
+          <img src="https://user-images.githubusercontent.com/72762629/152393096-1a99518a-6632-4f10-9c71-b29b20c380e2.png" alt="Logo" height="80" >
   </a>
 
   <h3 align="center">Alchemy NFT API Demo</h3>
@@ -21,8 +21,7 @@
   </p>
 
 </div>
-
-
+  
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -53,15 +52,23 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![Jan-21-2022 19-33-50-min](https://user-images.githubusercontent.com/72762629/150807611-5bf5ab02-e9a9-4cfb-95c2-61f2bf0f0e2f.gif)
+<img width="1600" alt="Screenshot 2022-02-03 at 18 11 09" src="https://user-images.githubusercontent.com/72762629/152393504-72162127-cf56-4de6-8f11-1653c24aa2b9.png">
 
-This Demo, built on top of ReactJs, showcase the functionalities of the [Alchemy NFT API](https://www.alchemy.com/nft-api), allowing you to fetch NFTs by:
-- Wallet Address
-- Smart contract address
+Build your own multi-chain NFT Explorer using the new Alchemy NFT API! 
 
-and display the images, attributes, collection name, and creator of your favourite NFTs
+
+Built on top of ReactJs, this repo showcase the functionalities of the [Alchemy NFT API](https://www.alchemy.com/nft-api):
+- Keep track of your NFTs on Polygon, Ethereum, and Mumbai.
+- Search NFTs by collection
+- Filter by Smart Contract address
+
+and display the images, attributes, collection name, and creator of your favourite NFTs.
+
+Supporting both ERC1155 and ERC721!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+![Jan-21-2022 19-33-50-min](https://user-images.githubusercontent.com/72762629/150807611-5bf5ab02-e9a9-4cfb-95c2-61f2bf0f0e2f.gif)
 
 
 ### Built With
