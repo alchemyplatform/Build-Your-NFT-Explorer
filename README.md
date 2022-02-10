@@ -106,10 +106,12 @@ Getting started is super simple! Follow the following steps and start fetching N
    
 3. Create a .env file in the root folder
 4. Create un account on [Alchemy.com](https://www.alchemy.com/)
-5. Grab your Alchemy Endpoint key following [This guide](https://docs.alchemy.com/alchemy/introduction/getting-started)
-6. Enter your Alchemy Endpoint to your .env file
+5. Grab your Alchemy Endpoint URL following [This guide](https://docs.alchemy.com/alchemy/introduction/getting-started)
+6. Enter your Alchemy Endpoint URL to your .env file for all the networks you'd like to use:
    ```js
-   ALCHEMY_ETHEREUM_ENDPOINT=YOUR_API_KEY
+   REACT_APP_ALCHEMY_ETHEREUM_ENDPOINT=YOUR_API_URL
+   REACT_APP_ALCHEMY_POLYGON_ENDPOINT=YOUR_API_URL
+   REACT_APP_ALCHEMY_MUMBAI_ENDPOINT=YOUR_API_URL
    ```
 7. Run the application
   ```sh
