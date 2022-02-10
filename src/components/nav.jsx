@@ -40,6 +40,8 @@ const Nav = () => {
                 <Route path="/myprofile" element={<MyProfile />} />
             </Routes>
 
+            <div></div>
+
         </BrowserRouter>
     )
 }

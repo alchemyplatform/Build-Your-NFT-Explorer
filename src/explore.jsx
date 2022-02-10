@@ -3,17 +3,12 @@ import { useState } from 'react';
 import ChainSelector from './components/chainSelector';
 import NftCard from './components/nftcard';
 import {fetchNFTs} from './utils/fetchNFTs';
-// compiler: "FrankenPunks Generator"
-// description: "We're a community-based collectibles project featuring art by 3D Punks. 3D FrankenPunks come in an evil array of shapes, traits, and sizes with a few surprises along the way. The collection size is 10,000. Each FrankenPunk allows its owner to vote on creating experiences and influencing project developments which are paid for by the Punksville Community Treasury."
-// edition: 3406
-// image: "ipfs://QmQYa6JwYnecVr1JZ3EMug5hrgcoegSAZaBR2pvc8P9ZUi/3406.png"
-// name: "#3406"
+
 
 
 
 const Explore = () => {
 
-    // const [blockchain, setBlockchain] = useState() NOT IMPLEMENTED
     const [owner, setOwner] = useState("")
     const [contractAddress, setContractAddress] = useState("")
     const [NFTs, setNFTs] = useState("")
@@ -26,7 +21,6 @@ const Explore = () => {
         <div>
             <header className=' py-24  mb-12 w-full   alchemy'>
                 <div className='flex-grow flex justify-end mr-12 mb-12'>
-                   
                 </div>
                 <div className='flex flex-col items-center mb-12'>
                     <div className='mb-16 text-white text-center'>

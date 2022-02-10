@@ -12,6 +12,7 @@ const MyProfile = () => {
     const [chain, setBlockchain] = useState("Ethereum")
 
     const [NFTs, setNFTs] = useState()
+    
     useEffect(async () => {
         if (accountData) {
             const data = await fetchNFTs(accountData.address, setNFTs, chain)
