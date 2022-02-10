@@ -1,15 +1,19 @@
 import NftCard from "../components/nftcard";
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+const web3 = createAlchemyWeb3("https://eth-mainnet.alchemyapi.io/tr1hqKWEHZh_XMmWCZTRtvxpuR8HG6yS");
 
 const getAddressNFTs = async (endpoint, owner, contractAddress) => {
     if (owner) {
         let data;
         try {
             if (contractAddress) {
-                data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}&contractAddresses%5B%5D=${contractAddress}`).then(data => data.json())
+                // data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}&contractAddresses%5B%5D=${contractAddress}`).then(data => data.json())
+                data = await web3.alchemy.getNfts({owner, contractAddress});
     
             } else {
                 // data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}`).then(data => data.json())
-                data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}`).then(data => data.json())
+                // data = await fetch(`${endpoint}/v1/getNFTs?owner=${owner}`).then(data => data.json())
+                data = await web3.alchemy.getNfts({owner});
                 
             }
             console.log("GETNFTS: ", data)
@@ -41,7 +45,8 @@ const getEndpoint = (chain) => {
 const fetchNFTs = async (owner, setNFTs, chain, contractAddress) => {
     let endpoint = getEndpoint(chain)
     const data = await getAddressNFTs(endpoint, owner, contractAddress)
-    if (data.ownedNfts.length) {
+    console.log(data);
+    if (data && data.ownedNfts.length) {
         const NFTs = await Promise.allSettled(data.ownedNfts.map(async (NFT) => {
                 const metadata = await fetch(`${endpoint}/v1/getNFTMetadata?contractAddress=${NFT.contract.address}&tokenId=${NFT.id.tokenId}`,).then(data => data.json())
                 let image;

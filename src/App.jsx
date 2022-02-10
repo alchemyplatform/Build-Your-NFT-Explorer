@@ -4,7 +4,7 @@ import { WalletConnectConnector } from "wagmi/connectors/walletConnect"
 import Nav from './components/nav';
 
 function App() {
-  const alchemyId = "YOUR_ALCHEMY_API_KEY"
+  const alchemyId = "tr1hqKWEHZh_XMmWCZTRtvxpuR8HG6yS"
 
   // initialize wagmi library connectors for Metamask and Walletconnect
   const connectors = ({ chainId }) => {
