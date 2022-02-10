@@ -17,7 +17,7 @@ const MyProfile = () => {
         if (accountData) {
             const data = await fetchNFTs(accountData.address, setNFTs, chain)
         }
-    }, [accountData, chain])
+    }, [accountData && accountData.address, chain])
 
 
     return (
