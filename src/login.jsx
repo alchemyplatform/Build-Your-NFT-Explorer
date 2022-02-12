@@ -13,7 +13,7 @@ const Login = () => {
                 <div className="w-2/6">
                     <button className="py-3 w-full bg-white rounded-sm hover:bg-slate-100" disabled={!x.ready} key={x.id} onClick={() => {
                         connect(x)
-                        navigate("/explore", {replace: true})
+                        navigate("/myprofile", {replace: true})
                     }}>
                         {x.name}
                         {!x.ready && ' (unsupported)'}
