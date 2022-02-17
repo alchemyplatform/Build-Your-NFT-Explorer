@@ -10,12 +10,10 @@
   <p align="center">
     Find, verify, and display any NFT,  across all major blockchains, with ease.
     <br />
-    <a href="https://docs.alchemy.com/alchemy/enhanced-apis/nft-api"><strong>Explore the docs »</strong></a>
+     <a href="https://www.youtube.com/watch?v=YehktV6LSqw"><strong>Full YouTube Tutorial »</strong></a>
     <br />
-     <a href="https://www.youtube.com/watch?v=YehktV6LSqw"><strong>Full YouTube Tutorial</strong></a>
     <br />
-      <a href="https://docs.alchemy.com/alchemy/enhanced-apis/nft-api">Explore the docs »</a>
-   
+     <a href="https://docs.alchemy.com/alchemy/enhanced-apis/nft-api">Explore the docs</a>
     ·
     <a href="https://build-your-nft-explorer.vercel.app/">View Demo</a>
     ·
@@ -144,9 +142,10 @@ _For more examples, please refer to the [Documentation](https://docs.alchemy.com
 - [x] Implement Ethereum support
 - [x] Implement Fetch by Owner
 - [x] Implement Fetch by Smart Contract address
-- [ ] Add Multichain support 
-- [ ] UI/UX Update
-- [ ] Implementing Fetch by collection 
+- [x] Add Multichain support 
+- [x] UI/UX Update
+- [ ] Implement Fetch by collection 
+- [ ] Implement ENS support
 
 
 See the [open issues](https://github.com/alchemyplatform/NFT-API-demo/issues) for a full list of proposed features (and known issues).
