@@ -12,8 +12,10 @@
     <br />
     <a href="https://docs.alchemy.com/alchemy/enhanced-apis/nft-api"><strong>Explore the docs »</strong></a>
     <br />
+     <a href="https://www.youtube.com/watch?v=YehktV6LSqw"><strong>Full YouTube Tutorial</strong></a>
     <br />
-    <a href="https://www.youtube.com/watch?v=YehktV6LSqw">FULL YouTube TUTORIAL</a>
+      <a href="https://docs.alchemy.com/alchemy/enhanced-apis/nft-api">Explore the docs »</a>
+   
     ·
     <a href="https://build-your-nft-explorer.vercel.app/">View Demo</a>
     ·
