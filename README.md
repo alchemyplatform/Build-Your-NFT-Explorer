@@ -1,25 +1,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/alchemyplatform/NFT-API-demo/">
-          <img src="https://user-images.githubusercontent.com/72762629/152393096-1a99518a-6632-4f10-9c71-b29b20c380e2.png" alt="Logo" height="80" >
-  </a>
 
   <h3 align="center">Alchemy NFT API Demo</h3>
 
   <p align="center">
-    Find, verify, and display any NFT,  across all major blockchains, with ease.
+    Find, verify, and display any NFT with ease.
     <br />
      <a href="https://www.youtube.com/watch?v=YehktV6LSqw"><strong>Full YouTube Tutorial »</strong></a>
     <br />
     <br />
      <a href="https://docs.alchemy.com/alchemy/enhanced-apis/nft-api">Explore the docs</a>
     ·
-    <a href="https://build-your-nft-explorer.vercel.app/">View Demo</a>
+    <a href="https://github.com/alchemyplatform/Build-Your-NFT-Explorer/issues">Report Bug</a>
     ·
-    <a href="https://github.com/alchemyplatform/NFT-API-demo/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/alchemyplatform/NFT-API-demo/issues">Request Feature</a>
+    <a href="https://github.com/alchemyplatform/Build-Your-NFT-Explorer/issues">Request Feature</a>
   </p>
 
 </div>
@@ -43,7 +38,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -60,11 +54,11 @@ Build your own multi-chain NFT Explorer using the new Alchemy NFT API!
 
 
 Built on top of ReactJs, this repo showcase the functionalities of the [Alchemy NFT API](https://www.alchemy.com/nft-api):
-- Keep track of your NFTs on Polygon, Ethereum, and Mumbai.
+- Keep track of your NFTs
 - Search NFTs by collection
-- Filter by Smart Contract address
+- Filter by an NFT Smart Contract address
 
-and display the images, attributes, collection name, and creator of your favourite NFTs.
+and display the images, attributes, collection name, and creator of your favorite NFTs.
 
 Supporting both ERC1155 and ERC721!
 
@@ -76,7 +70,6 @@ Supporting both ERC1155 and ERC721!
 ### Built With
 
 * [Alchemy](https://www.alchemy.com)
-* [Next.js](https://www.alchemy.com/)
 * [React.js](https://reactjs.org/)
 * [TailwindCSS](https://getbootstrap.com)
 
@@ -87,7 +80,7 @@ Supporting both ERC1155 and ERC721!
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Getting started is super simple! Follow the following steps and start fetching NFTs on Ethereum, Polygon, and Flow!
+Getting started is super simple! Follow the following steps and start fetching NFTs on Ethereum!
 
 ### Prerequisites
 
@@ -99,25 +92,19 @@ Getting started is super simple! Follow the following steps and start fetching N
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/alchemyplatform/NFT-API-demo.git
+   git clone https://github.com/alchemyplatform/Build-Your-NFT-Explorer.git
    ```
-2. Install the dependencies using npm or yarn
+2. Install the dependencies
    ```sh
-   npm install || yarn install
+   npm install
    ```
    
-3. Create a .env file in the root folder
-4. Create un account on [Alchemy.com](https://www.alchemy.com/)
-5. Grab your Alchemy Endpoint URL following [This guide](https://docs.alchemy.com/alchemy/introduction/getting-started)
-6. Enter your Alchemy Endpoint URL to your .env file for all the networks you'd like to use:
-   ```js
-   REACT_APP_ALCHEMY_ETHEREUM_ENDPOINT=YOUR_API_URL
-   REACT_APP_ALCHEMY_POLYGON_ENDPOINT=YOUR_API_URL
-   REACT_APP_ALCHEMY_MUMBAI_ENDPOINT=YOUR_API_URL
-   ```
-7. Run the application
+3. Create an account on [Alchemy.com](https://www.alchemy.com/)
+4. Grab your Alchemy API Key
+5. Update `const apiKey = "demo";` in `src/utils/fetchNFTs.js` with your Alchemy API Key
+6. Run the application
   ```sh
-  npm run start
+  npm start
   ```
   
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -133,25 +120,6 @@ Getting started is super simple! Follow the following steps and start fetching N
 _For more examples, please refer to the [Documentation](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Implement Ethereum support
-- [x] Implement Fetch by Owner
-- [x] Implement Fetch by Smart Contract address
-- [x] Add Multichain support 
-- [x] UI/UX Update
-- [ ] Implement Fetch by collection 
-- [ ] Implement ENS support
-
-
-See the [open issues](https://github.com/alchemyplatform/NFT-API-demo/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -180,12 +148,16 @@ Distributed under the MIT License.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 <!-- CONTACT -->
 ## Contact
 
  - [@AlchemyPlatform](https://twitter.com/AlchemyPlatform)
- - [Discord]()
+ - [Discord](https://www.alchemy.com/discord)
+
+ This repo was originally created by the wonderful:
+
+- [@VittoStack](https://twitter.com/VittoStack)
+- [@thatguyintech](https://twitter.com/thatguyintech)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
