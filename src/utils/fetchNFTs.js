@@ -51,8 +51,8 @@ const fetchNFTs = async (owner, contractAddress, setNFTs) => {
     const data = await getAddressNFTs(owner, contractAddress)
     if (data.ownedNfts.length) {
         const NFTs = await getNFTsMetadata(data.ownedNfts)
-        let fullfilledNFTs = NFTs.filter(NFT => NFT.status == "fulfilled")
-        setNFTs(fullfilledNFTs)
+        let fulfilledNFTs = NFTs.filter(NFT => NFT.status == "fulfilled")
+        setNFTs(fulfilledNFTs)
     } else {
         setNFTs(null)
     }
