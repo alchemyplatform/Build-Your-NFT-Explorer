@@ -15,7 +15,7 @@ const getAddressNFTs = async (owner, contractAddress, retryAttempt) => {
                 data = await fetch(`${endpoint}/getNFTs?owner=${owner}`).then(data => data.json())
             }
         } catch (e) {
-            getAddressNFTs(endpoint, owner, contractAddress, retryAttempt+1)
+            getAddressNFTs(owner, contractAddress, retryAttempt+1)
         }
 
         // NFT token IDs basically
@@ -24,12 +24,12 @@ const getAddressNFTs = async (owner, contractAddress, retryAttempt) => {
 }
 
 const getNFTsMetadata = async (NFTS) => {
-    const NFTsMetadata = await Promise.allSettled(NFTS.map(async (NFT) => {
+    return Promise.allSettled(NFTS.map(async (NFT) => {
         const metadata = await fetch(`${endpoint}/getNFTMetadata?contractAddress=${NFT.contract.address}&tokenId=${NFT.id.tokenId}`,).then(data => data.json())
         let imageUrl;
         console.log("metadata", metadata)
-        if (metadata.media[0].uri.gateway.length) {
-            imageUrl = metadata.media[0].uri.gateway
+        if (metadata.media[0].gateway) {
+            imageUrl = metadata.media[0].gateway
         } else {
             imageUrl = "https://via.placeholder.com/500"
         }
@@ -43,8 +43,6 @@ const getNFTsMetadata = async (NFTS) => {
             attributes: metadata.metadata.attributes
         }
     }))
-
-    return NFTsMetadata
 }
 
 const fetchNFTs = async (owner, contractAddress, setNFTs) => {
