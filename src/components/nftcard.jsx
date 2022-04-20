@@ -5,7 +5,7 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
             <div className="p-3">
                 <div className="flex mb-3">
                     <div className="flex-grow">
-                        <h3 className="text-xl">{}</h3>
+                        <h3 className="text-xl">{title}</h3>
                         <p>{`${id.slice(0, 4)}...${id.slice(id.length - 4)}`}</p>
                     </div>
                     <div className="flex mr-3">

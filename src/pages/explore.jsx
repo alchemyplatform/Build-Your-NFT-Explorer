@@ -8,6 +8,7 @@ const Explore = () => {
     const [owner, setOwner] = useState("")
     const [contractAddress, setContractAddress] = useState("")
     const [NFTs, setNFTs] = useState("")
+    
 
     return (
         <div>
@@ -26,7 +27,7 @@ const Explore = () => {
                         <input className="focus:outline-none rounded-sm py-2 px-3 w-full" value={contractAddress} onChange={(e) => setContractAddress(e.target.value)} placeholder='Insert NFT Contract address (optional)'></input>
                     </div>
                     <div className='w-2/6 flex justify-center'>
-                    <button className='py-3 bg-white rounded-sm w-full hover:bg-slate-100' onClick={() => {fetchNFTs(owner, contractAddress, setNFTs)}}>Search</button>
+                    <button className='py-3 bg-white rounded-sm w-full hover:bg-slate-100' onClick={() => {fetchNFTs(owner, contractAddress, setNFTs    )}}>Search</button>
                     </div>
                 </div>
             </header>
@@ -34,9 +35,9 @@ const Explore = () => {
             <section className='flex flex-wrap justify-center'>
                 {
                     NFTs ? NFTs.map(NFT => {
-                        
+                       
                         return (
-                           <NftCard key={NFT.value.id + NFT.value.  contractAddress} image={NFT.value.image} id={NFT.value.id} title={NFT.value.title} description={NFT.value.description} address={NFT.value.contractAddress} attributes={NFT.value.attributes}></NftCard>
+                           <NftCard image={NFT.media[0].gateway} id={NFT.id.tokenId } title={NFT.title} address={NFT.contract.address} description={NFT.description} attributes={NFT.metadata.attributes} ></NftCard>
                         )
                     }) : <div>No NFTs found</div>
                 }
